@@ -1,0 +1,13 @@
+#horizontal-scroll-container {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#horizontal-scroll-area {
+  width: fit-content;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  background: linear-gradient(136deg, white 0%, #C2C0C0 100%)
+}

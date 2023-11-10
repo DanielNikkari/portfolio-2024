@@ -1,0 +1,34 @@
+#introduction {
+  width: 100vw;
+  height: 100vw;
+  overflow: hidden;
+}
+
+#greetings-text-container {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hide-greetings {
+  display: none;
+}
+
+.display-greetings {
+  animation: animate-greetings 1.5s linear forwards;
+}
+
+@keyframes animate-greetings {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
