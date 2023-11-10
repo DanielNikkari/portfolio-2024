@@ -1,3 +1,46 @@
 #skills-container {
-  width: 100vw;
+  width: 150vw;
+}
+
+#skills {
+  width: 50vw;
+  height: 75vh;
+  margin: 0 auto;
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.display-table {
+  animation: display 1.5s ease-in-out forwards;
+  width: 70%;
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+
+.skill-table-item {
+  /* border: 1px solid blue; */
+  text-align: center;
+  margin: 0;
+}
+
+.skill-icon {
+  width: 90%;
+  padding: 0.2em;
+}
+
+@keyframes display {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }

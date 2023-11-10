@@ -1,8 +1,9 @@
 import { useRef, useEffect } from "react"
 
-export function useHorizontalScroll() {
+let scrollAmount = 0
+
+export const useHorizontalScroll = () => {
   const elRef = useRef()
-  console.log(elRef)
   useEffect(() => {
     const el = elRef.current
     if (el) {
@@ -12,10 +13,15 @@ export function useHorizontalScroll() {
         el.scrollTo({
           left: el.scrollLeft + e.deltaY / 3,
         })
+        scrollAmount = +el.scrollLeft + e.deltaY / 3
       }
       el.addEventListener("wheel", onWheel)
       return () => el.removeEventListener("wheel", onWheel)
     }
   }, [])
   return elRef
+}
+
+export const scrolledX = () => {
+  return scrollAmount
 }

@@ -11,9 +11,7 @@ export const Introduction = () => {
 
   return (
     <section id="introduction">
-      <div id="greetings-text-container">
-        <GreetingsText />
-      </div>
+      <GreetingsText />
     </section>
   )
 }
