@@ -42,3 +42,22 @@
     transform: translateY(0%);
   }
 }
+
+#scroll-helper {
+  position: absolute;
+  width: 5em;
+  left: 10%;
+  bottom: 30%;
+  opacity: 0.4;
+  animation: helper-animation 2s ease-in infinite;
+}
+
+@keyframes helper-animation {
+  0% {
+    transform: translateY(0%);
+  } 50% {
+    transform: translateY(15%);
+  } 100% {
+    transform: translateY(0%);
+  }
+}
