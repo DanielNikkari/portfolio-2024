@@ -1,7 +1,9 @@
 import "./styles/Portfolio.css"
+import "./styles/generalStyles.css"
 import { Introduction } from "./components/Introduction"
 import { Skills } from "./components/Skills"
 import { NavBar } from "./components/NavBar"
+import { Projects } from "./components/Projects"
 
 import { useHorizontalScroll } from "./utils/horizontalScroll"
 
@@ -18,6 +20,7 @@ const Portfolio = () => {
         <NavBar />
         <Introduction />
         <Skills />
+        <Projects />
       </div>
     </div>
   )

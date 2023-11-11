@@ -1,0 +1,92 @@
+#projects {
+  /* width: 2000px; */
+}
+
+#projects-container {
+  /* width: 1800px; */
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+#project-section-title {
+  margin: 0 10em 0 5em;
+}
+
+.project-card {
+  margin: 0 5em;
+}
+
+.project-title {
+  font-size: 3.5em;
+  margin: 0.5em auto;
+  font-weight: 400;
+  background: -webkit-linear-gradient(#d499f8, #902CCD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(2px 10px 10px rgb(0 0 0 / 0.2));
+}
+
+.project-icon {
+  height: 15em;
+  border-radius: 1em;
+  margin: 0.2em 2em 0em 0em;
+}
+
+.project-info-container {
+  display: flex;
+}
+
+.project-info {
+  flex-direction: column;
+}
+
+.project-description {
+  text-wrap: wrap;
+  margin: 0.3em 0;
+  font-weight: 300;
+  font-size: 16px;
+  width: 20em;
+}
+
+.project-skill-container {
+  width: 200px;
+  margin: 0.5em 0em 0em 0em;
+}
+
+.project-skill-container img {
+  width: 25%;
+  margin: 0 0.7em 0 0;
+}
+
+.project-year {
+  font-size: 2em;
+  margin: 0.3em 0;
+  font-weight: 400;
+  background: -webkit-linear-gradient(#d499f8, #902CCD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 750px) {
+  #project-section-title {
+    margin: 0 3em 0 1em;
+  }
+  .project-title {
+    font-size: 2.2em;
+  }
+  .project-year {
+    font-size: 1.5em;
+  }
+  .project-icon {
+    height: 10em;
+  }
+  .project-skill-container {
+    width: 150px;
+  }
+  .project-description {
+    font-size: 14px;
+    width: 13em;
+  }
+}

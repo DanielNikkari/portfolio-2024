@@ -9,7 +9,6 @@ export const Introduction = () => {
 
   useEffect(() => {
     const greetingsText = document.getElementById("greetings-text")
-    console.log(greetingsText.classList)
     greetingsText.classList.remove("hide-greetings")
   }, [])
 

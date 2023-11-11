@@ -23,6 +23,7 @@ import reactIcon from "../assets/icons/react-icon.png"
 import sqlIcon from "../assets/icons/sql-icon.png"
 import pandasIcon from "../assets/icons/pandas-icon.png"
 import cIcon from "../assets/icons/c-icon.png"
+import denoicon from "../assets/icons/deno-icon.png"
 
 export const Skills = () => {
   const nodeRef = useRef()
@@ -51,6 +52,10 @@ export const Skills = () => {
     {
       skill: "React",
       icon: reactIcon,
+    },
+    {
+      skill: "Deno",
+      icon: denoicon,
     },
     {
       skill: "C++",
@@ -142,12 +147,8 @@ export const Skills = () => {
 
   const showSkills = () => {
     if (!triggered) {
-      titleRef.current.classList.add("section-title")
-      tableRef.current.classList.add("display-table")
-      setTimeout(() => {
-        titleRef.current.classList.remove("hide")
-        tableRef.current.classList.remove("hide")
-      }, 100)
+      titleRef.current.classList.remove("hide")
+      tableRef.current.classList.remove("hide")
       triggered = true
     }
   }
@@ -165,8 +166,10 @@ export const Skills = () => {
   return (
     <section id="skills-container">
       <div id="skills" ref={nodeRef}>
-        <h2 ref={titleRef}>Skills</h2>
-        <table ref={tableRef}>
+        <h2 className="section-title hide" ref={titleRef}>
+          Skills
+        </h2>
+        <table className="display-table hide" ref={tableRef}>
           <tbody>{renderTable()}</tbody>
         </table>
       </div>
