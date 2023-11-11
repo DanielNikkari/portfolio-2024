@@ -54,7 +54,7 @@
     justify-content: center;
   }
   #skills-container {
-    width: 150vw;
+    width: 200vw;
     display: flex;
   }
 }
@@ -62,9 +62,9 @@
 @keyframes display {
   0% {
     opacity: 0;
+    transform: translateY(15%);
   }
   10% {
-    transform: translateY(15%);
     opacity: 0;
   }
   100% {

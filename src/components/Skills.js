@@ -3,7 +3,6 @@ import { useIsVisible } from "react-is-visible"
 import { useRef } from "react"
 import Tooltip from "@mui/material/Tooltip"
 import Zoom from "@mui/material/Zoom"
-import ClickAwayListener from "@mui/material/ClickAwayListener"
 
 // Icon imports
 import jsIcon from "../assets/icons/js-icon.png"
@@ -27,7 +26,10 @@ import cIcon from "../assets/icons/c-icon.png"
 
 export const Skills = () => {
   const nodeRef = useRef()
+  const tableRef = useRef()
+  const titleRef = useRef()
   const isVisible = useIsVisible(nodeRef)
+  let triggered = false
 
   const skills = [
     {
@@ -104,23 +106,6 @@ export const Skills = () => {
     },
   ]
 
-  // const renderTable = () => {
-  //   const tableRows = []
-
-  //   for (let i = 0; i < 4; i++) {
-  //     const rowCells = []
-  //     for (let j = 0; j < 4; j++) {
-  //       rowCells.push(
-  //         <td className="skill-table-item" key={j}>
-  //           <img className="skill-icon" src={jsIcon} />
-  //         </td>
-  //       )
-  //     }
-  //     tableRows.push(<tr key={i}>{rowCells}</tr>)
-  //   }
-  //   return tableRows
-  // }
-
   const renderTable = () => {
     const tableRows = []
     let i = 0
@@ -155,11 +140,33 @@ export const Skills = () => {
     return tableRows
   }
 
+  const showSkills = () => {
+    if (!triggered) {
+      titleRef.current.classList.add("section-title")
+      tableRef.current.classList.add("display-table")
+      setTimeout(() => {
+        titleRef.current.classList.remove("hide")
+        tableRef.current.classList.remove("hide")
+      }, 100)
+      triggered = true
+    }
+  }
+
+  isVisible &&
+    (() => {
+      let currentNav = document.querySelector(".activeNav")
+      currentNav.classList.remove("activeNav")
+      let skillsSectionNav = document.getElementById("skills-nav")
+      skillsSectionNav.classList.add("activeNav")
+    })()
+
+  isVisible && showSkills()
+
   return (
     <section id="skills-container">
       <div id="skills" ref={nodeRef}>
-        <h2 className={isVisible ? "section-title" : "hide"}>Skills</h2>
-        <table className={isVisible ? "display-table" : "hide"}>
+        <h2 ref={titleRef}>Skills</h2>
+        <table ref={tableRef}>
           <tbody>{renderTable()}</tbody>
         </table>
       </div>

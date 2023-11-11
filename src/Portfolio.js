@@ -1,6 +1,7 @@
 import "./styles/Portfolio.css"
 import { Introduction } from "./components/Introduction"
 import { Skills } from "./components/Skills"
+import { NavBar } from "./components/NavBar"
 
 import { useHorizontalScroll } from "./utils/horizontalScroll"
 
@@ -14,6 +15,7 @@ const Portfolio = () => {
       ref={scrollRef}
     >
       <div id="horizontal-scroll-area">
+        <NavBar />
         <Introduction />
         <Skills />
       </div>
