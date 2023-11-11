@@ -60,7 +60,7 @@ export const Projects = () => {
       project: "Tower Defense",
       skillsUsed: [cppIcon],
       description:
-        "We implemented a tower defense game in a team of 4 utilizing SFML library as part of the course Object Oriented Programming with C++. We utilized agile practises in the development of the game.",
+        "We implemented a tower defense game in a team of 4 utilizing SFML library as part of the course Object Oriented Programming with C++. Our development approach was bolstered by the incorporation of agile practices, ensuring a dynamic and iterative process throughout the creation of the game.",
       icon: towerdefenseIcon,
       year: 2021,
       link: "https://github.com/DanielNikkari/Tower-Defense",
@@ -103,7 +103,7 @@ export const Projects = () => {
           ref={titleRef}
           className="section-title hide"
         >
-          My Projects
+          My Projects 📚
         </h2>
         {projects.map((project, index) => {
           return (

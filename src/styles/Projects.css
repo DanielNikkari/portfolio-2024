@@ -11,7 +11,7 @@
 }
 
 #project-section-title {
-  margin: 0 14em 0 5em;
+  margin: 0 8em 0 5em;
 }
 
 .project-card {
@@ -32,6 +32,11 @@
   height: 15em;
   border-radius: 1em;
   margin: 0.2em 2em 0em 0em;
+  transition: 0.3s;
+}
+
+.project-icon:hover {
+  scale: 1.05;
 }
 
 .project-info-container {
@@ -44,6 +49,8 @@
 
 .project-description {
   text-wrap: wrap;
+  white-space: normal;
+  word-break: break-word;
   margin: 0.3em 0;
   font-weight: 300;
   font-size: 16px;

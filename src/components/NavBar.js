@@ -13,7 +13,6 @@ export const NavBar = () => {
   }, [])
 
   const scrollToSection = (section, e) => {
-    console.log("navbar clicked", section)
     let currentNavItem = document.querySelector(".activeNav")
     currentNavItem.classList.remove("activeNav")
     e.target.classList.add("activeNav")
@@ -34,14 +33,14 @@ export const NavBar = () => {
         onClick={(event) => scrollToSection(skillsSection, event)}
         className="navbar-item"
       >
-        Skills
+        Skills 🚀
       </button>
       <button
         id="projects-nav"
         onClick={(event) => scrollToSection(projectsSection, event)}
         className="navbar-item"
       >
-        Projects
+        Projects 📚
       </button>
     </section>
   )

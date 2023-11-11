@@ -24,10 +24,6 @@
   transition: 0.3s;
 }
 
-.skill-table-item:hover {
-  scale: 0.9;
-}
-
 .skill-icon {
   width: 90%;
   padding: 0.2em;

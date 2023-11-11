@@ -167,7 +167,7 @@ export const Skills = () => {
     <section id="skills-container">
       <div id="skills" ref={nodeRef}>
         <h2 className="section-title hide" ref={titleRef}>
-          Skills
+          Skills 🚀
         </h2>
         <table className="display-table hide" ref={tableRef}>
           <tbody>{renderTable()}</tbody>
