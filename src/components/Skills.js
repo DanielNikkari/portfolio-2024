@@ -1,6 +1,9 @@
 import "../styles/Skills.css"
 import { useIsVisible } from "react-is-visible"
 import { useRef } from "react"
+import Tooltip from "@mui/material/Tooltip"
+import Zoom from "@mui/material/Zoom"
+import ClickAwayListener from "@mui/material/ClickAwayListener"
 
 // Icon imports
 import jsIcon from "../assets/icons/js-icon.png"
@@ -19,6 +22,8 @@ import pbiIcon from "../assets/icons/pbi-icon.png"
 import pythonIcon from "../assets/icons/python-icon.png"
 import reactIcon from "../assets/icons/react-icon.png"
 import sqlIcon from "../assets/icons/sql-icon.png"
+import pandasIcon from "../assets/icons/pandas-icon.png"
+import cIcon from "../assets/icons/c-icon.png"
 
 export const Skills = () => {
   const nodeRef = useRef()
@@ -30,64 +35,72 @@ export const Skills = () => {
       icon: jsIcon,
     },
     {
-      skill: "C++",
-      icon: cppIcon,
-    },
-    {
       skill: "CSS",
       icon: cssIcon,
-    },
-    {
-      skill: "Docker",
-      icon: dockerIcon,
-    },
-    {
-      skill: "Figma",
-      icon: figmaIcon,
-    },
-    {
-      skill: "Git",
-      icon: gitIcon,
-    },
-    {
-      skill: "Google suite",
-      icon: gsuiteIcon,
     },
     {
       skill: "HTML5",
       icon: htmlIcon,
     },
     {
-      skill: "Mongo DB",
-      icon: mongoIcon,
-    },
-    {
-      skill: "Microsoft suite",
-      icon: msuiteIcon,
-    },
-    {
       skill: "Node.js",
       icon: nodeIcon,
-    },
-    {
-      skill: "Numpy (Python)",
-      icon: numpyIcon,
-    },
-    {
-      skill: "Power BI",
-      icon: pbiIcon,
-    },
-    {
-      skill: "Python",
-      icon: pythonIcon,
     },
     {
       skill: "React",
       icon: reactIcon,
     },
     {
+      skill: "C++",
+      icon: cppIcon,
+    },
+    {
+      skill: "C",
+      icon: cIcon,
+    },
+    {
+      skill: "Python",
+      icon: pythonIcon,
+    },
+    {
+      skill: "Pandas (Python)",
+      icon: pandasIcon,
+    },
+    {
+      skill: "Numpy (Python)",
+      icon: numpyIcon,
+    },
+    {
+      skill: "Docker",
+      icon: dockerIcon,
+    },
+    {
+      skill: "Git",
+      icon: gitIcon,
+    },
+    {
+      skill: "Figma",
+      icon: figmaIcon,
+    },
+    {
+      skill: "Mongo DB",
+      icon: mongoIcon,
+    },
+    {
       skill: "SQL",
       icon: sqlIcon,
+    },
+    {
+      skill: "Google suite",
+      icon: gsuiteIcon,
+    },
+    {
+      skill: "Microsoft suite",
+      icon: msuiteIcon,
+    },
+    {
+      skill: "Power BI",
+      icon: pbiIcon,
     },
   ]
 
@@ -114,15 +127,27 @@ export const Skills = () => {
     while (i < skills.length) {
       const rowCells = []
       for (let j = 0; j < 4; j++) {
-        rowCells.push(
-          <td className="skill-table-item" key={j}>
-            <img
-              className="skill-icon"
-              src={skills[i + j].icon}
-              alt="skill icon"
-            />
-          </td>
-        )
+        if (i + j < skills.length) {
+          rowCells.push(
+            <Tooltip
+              title={skills[i + j].skill}
+              placement="bottom"
+              arrow
+              TransitionComponent={Zoom}
+              followCursor
+              enterTouchDelay={0}
+              key={j + i}
+            >
+              <td className="skill-table-item" key={j + i}>
+                <img
+                  className="skill-icon"
+                  src={skills[i + j].icon}
+                  alt="skill icon"
+                />
+              </td>
+            </Tooltip>
+          )
+        }
       }
       i += 4
       tableRows.push(<tr key={i}>{rowCells}</tr>)

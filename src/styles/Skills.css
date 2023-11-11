@@ -15,9 +15,10 @@
   font-size: 4em;
   margin: 1em auto;
   font-weight: 700;
-  background: -webkit-linear-gradient(#d6d6d6, #333);
+  background: -webkit-linear-gradient(#d499f8, #902CCD);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(2px 10px 10px rgb(0 0 0 / 0.2));
 }
 
 .hide {
@@ -35,6 +36,11 @@
   margin: 0;
   scale: 0.8;
   filter: drop-shadow(2px 10px 10px rgb(0 0 0 / 0.2));
+  transition: 0.3s;
+}
+
+.skill-table-item:hover {
+  scale: 0.9;
 }
 
 .skill-icon {
@@ -42,12 +48,23 @@
   padding: 0.2em;
 }
 
+@media (max-width: 750px) {
+  #skills {
+    width: 80vw;
+    justify-content: center;
+  }
+  #skills-container {
+    width: 150vw;
+    display: flex;
+  }
+}
+
 @keyframes display {
   0% {
     opacity: 0;
   }
-  20% {
-    transform: translateY(20%);
+  10% {
+    transform: translateY(15%);
     opacity: 0;
   }
   100% {
