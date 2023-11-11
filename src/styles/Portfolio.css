@@ -1,7 +1,9 @@
 #horizontal-scroll-container {
   overflow: auto;
+  overflow-y: hidden;
   white-space: nowrap;
 }
+
 
 #horizontal-scroll-area {
   width: fit-content;
@@ -21,4 +23,18 @@
 #horizontal-scroll-container {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+@media screen and (max-width: 480px){
+  body{
+    overflow-y: hidden;
+    height: 100%;
+  }
+  #horizontal-scroll-area {
+    overflow-y: hidden;
+  }
+  #horizontal-scroll-area {
+    height: 100vh;
+    background: white
+  }
 }

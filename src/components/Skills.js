@@ -119,23 +119,41 @@ export const Skills = () => {
       for (let j = 0; j < 4; j++) {
         if (i + j < skills.length) {
           rowCells.push(
-            <Tooltip
-              title={skills[i + j].skill}
-              placement="bottom"
-              arrow
-              TransitionComponent={Zoom}
-              followCursor
-              enterTouchDelay={0}
-              key={j + i}
-            >
-              <td className="skill-table-item" key={j + i}>
-                <img
-                  className="skill-icon"
-                  src={skills[i + j].icon}
-                  alt="skill icon"
-                />
-              </td>
-            </Tooltip>
+            "ontouchstart" in window ? (
+              <Tooltip
+                title={skills[i + j].skill}
+                placement="bottom"
+                arrow
+                TransitionComponent={Zoom}
+                enterTouchDelay={0}
+                key={j + i}
+              >
+                <td className="skill-table-item" key={j + i}>
+                  <img
+                    className="skill-icon"
+                    src={skills[i + j].icon}
+                    alt="skill icon"
+                  />
+                </td>
+              </Tooltip>
+            ) : (
+              <Tooltip
+                title={skills[i + j].skill}
+                placement="bottom"
+                arrow
+                TransitionComponent={Zoom}
+                followCursor
+                key={j + i}
+              >
+                <td className="skill-table-item" key={j + i}>
+                  <img
+                    className="skill-icon"
+                    src={skills[i + j].icon}
+                    alt="skill icon"
+                  />
+                </td>
+              </Tooltip>
+            )
           )
         }
       }

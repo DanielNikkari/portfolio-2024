@@ -45,19 +45,51 @@
 
 #scroll-helper {
   position: absolute;
-  width: 5em;
-  left: 10%;
-  bottom: 30%;
+  width: 4em;
+  left: 50%;
+  bottom: 5em;
   opacity: 0.4;
-  animation: helper-animation 2s ease-in infinite;
+  transform: translateX(-50%);
+  animation: scroll-helper-animation 2s ease-in-out infinite;
 }
 
-@keyframes helper-animation {
+@keyframes scroll-helper-animation {
   0% {
     transform: translateY(0%);
   } 50% {
-    transform: translateY(15%);
+    transform: translateY(10%);
   } 100% {
     transform: translateY(0%);
+  }
+}
+
+#swipe-helper {
+  position: absolute;
+  width: 4em;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5em;
+  opacity: 0.4;
+  animation: swipe-helper-animation 3s ease-in-out infinite;
+}
+
+@keyframes swipe-helper-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  } 20% {
+    opacity: 1;
+  } 50% {
+    transform: translateX(0%);
+    opacity: 1;
+  } 70% {
+    opacity: 1;
+    transform: translateX(0%);
+  } 80% {
+    opacity: 0;
+    transform: translateX(0%);
+  } 100% {
+    opacity: 0;
+    transform: translateX(-50%);
   }
 }
