@@ -1,4 +1,5 @@
 {
+  "homepage": "https://danielnikkari.github.io/portfolio-daniel-2024",
   "name": "portfolio-2024-react",
   "version": "0.1.0",
   "private": true,
@@ -20,6 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
