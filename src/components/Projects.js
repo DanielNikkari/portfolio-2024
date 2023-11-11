@@ -83,6 +83,16 @@ export const Projects = () => {
     }
   }
 
+  isVisible &&
+    (() => {
+      let currentNav = document.querySelector(".activeNav")
+      currentNav.classList.remove("activeNav")
+      let skillsSectionNav = document.getElementById("projects-nav")
+      skillsSectionNav.classList.add("activeNav")
+    })()
+
+  isVisible && showSkills()
+
   isVisible && showSkills()
 
   return (

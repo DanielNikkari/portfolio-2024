@@ -5,9 +5,11 @@ import { useEffect } from "react"
 export const NavBar = () => {
   let introSection
   let skillsSection
+  let projectsSection
   useEffect(() => {
     introSection = document.getElementById("introduction")
     skillsSection = document.getElementById("skills-container")
+    projectsSection = document.getElementById("projects-container")
   }, [])
 
   const scrollToSection = (section, e) => {
@@ -33,6 +35,13 @@ export const NavBar = () => {
         className="navbar-item"
       >
         Skills
+      </button>
+      <button
+        id="projects-nav"
+        onClick={(event) => scrollToSection(projectsSection, event)}
+        className="navbar-item"
+      >
+        Projects
       </button>
     </section>
   )
