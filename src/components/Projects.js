@@ -8,6 +8,7 @@ import quizzerIcon from "../assets/projects/quizzer-icon.png"
 import towerdefenseIcon from "../assets/projects/tower-defense-icon.png"
 import treehuggerIcon from "../assets/projects/treehugger.png"
 import platformerIcon from "../assets/projects/y2-icon.png"
+import fullstackIcon from "../assets/projects/Fullstack-2022-icon.png"
 
 // Skills icons
 import denoIcon from "../assets/icons/deno-icon.png"
@@ -35,6 +36,15 @@ export const Projects = () => {
       icon: mobilepayIcon,
       year: 2023,
       link: "https://www.figma.com/proto/vwUeBe4O78J1ZZdnoYE73j/A5-MobilePay-Replica?page-id=0%3A1&node-id=1%3A2&viewport=216%2C338%2C0.19&scaling=scale-down&starting-point-node-id=94%3A435",
+    },
+    {
+      project: "Full Stack",
+      skillsUsed: [reactIcon, nodeIcon, jsIcon],
+      description:
+        "I took the course Fullstack Open 2022 as part of my Computer Science studies.",
+      icon: fullstackIcon,
+      year: 2022,
+      link: "https://github.com/DanielNikkari/fullstack-2022",
     },
     {
       project: "Qu?zzer",
