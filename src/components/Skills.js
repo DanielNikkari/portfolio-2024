@@ -163,14 +163,6 @@ export const Skills = () => {
     return tableRows
   }
 
-  const showSkills = () => {
-    if (!triggered) {
-      titleRef.current.classList.remove("hide")
-      tableRef.current.classList.remove("hide")
-      triggered = true
-    }
-  }
-
   isVisible &&
     (() => {
       let currentNav = document.querySelector(".activeNav")
@@ -179,15 +171,13 @@ export const Skills = () => {
       skillsSectionNav.classList.add("activeNav")
     })()
 
-  isVisible && showSkills()
-
   return (
     <section id="skills-container">
       <div id="skills" ref={nodeRef}>
-        <h2 className="section-title hide" ref={titleRef}>
+        <h2 className="section-title" ref={titleRef}>
           Skills 🚀
         </h2>
-        <table className="display-table hide" ref={tableRef}>
+        <table className="display-table" ref={tableRef}>
           <tbody>{renderTable()}</tbody>
         </table>
       </div>

@@ -24,9 +24,7 @@ import pythonIcon from "../assets/icons/python-icon.png"
 export const Projects = () => {
   const nodeRef = useRef()
   const titleRef = useRef()
-  const isVisible = useIsVisible(nodeRef)
-
-  let triggered = false
+  const isVisible = useIsVisible(titleRef)
 
   const projects = [
     {
@@ -76,13 +74,6 @@ export const Projects = () => {
     },
   ]
 
-  const showSkills = () => {
-    if (!triggered) {
-      titleRef.current.classList.remove("hide")
-      triggered = true
-    }
-  }
-
   isVisible &&
     (() => {
       let currentNav = document.querySelector(".activeNav")
@@ -91,18 +82,10 @@ export const Projects = () => {
       skillsSectionNav.classList.add("activeNav")
     })()
 
-  isVisible && showSkills()
-
-  isVisible && showSkills()
-
   return (
     <section id="projects">
       <div id="projects-container" ref={nodeRef}>
-        <h2
-          id="project-section-title"
-          ref={titleRef}
-          className="section-title hide"
-        >
+        <h2 id="project-section-title" ref={titleRef} className="section-title">
           My Projects 📚
         </h2>
         {projects.map((project, index) => {
