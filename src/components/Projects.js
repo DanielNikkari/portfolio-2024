@@ -1,6 +1,8 @@
 import "../styles/Projects.css"
 import { useIsVisible } from "react-is-visible"
 import { useRef } from "react"
+import Tooltip from "@mui/material/Tooltip"
+import Zoom from "@mui/material/Zoom"
 
 // Project icons
 import mobilepayIcon from "../assets/projects/MobilePay-Replica.png"
@@ -30,7 +32,7 @@ export const Projects = () => {
   const projects = [
     {
       project: "MobilePay Figma Replica",
-      skillsUsed: [figmaIcon],
+      skillsUsed: [{ icon: figmaIcon, description: "Figma" }],
       description:
         "I created a faithful replica of the MobilePay user interface using Figma as part of the Data-Driven Concept Design Course. Our objective was to meticulously reproduce the selected application's interface with precision and attention to detail.",
       icon: mobilepayIcon,
@@ -39,7 +41,11 @@ export const Projects = () => {
     },
     {
       project: "Full Stack",
-      skillsUsed: [reactIcon, nodeIcon, jsIcon],
+      skillsUsed: [
+        { icon: reactIcon, description: "React" },
+        { icon: nodeIcon, description: "Node.js" },
+        { icon: jsIcon, description: "JavaScript" },
+      ],
       description:
         "I took the course Fullstack Open 2022 as part of my Computer Science studies.",
       icon: fullstackIcon,
@@ -48,7 +54,13 @@ export const Projects = () => {
     },
     {
       project: "Qu?zzer",
-      skillsUsed: [denoIcon, jsIcon, htmlIcon, cssIcon, dockerIcon],
+      skillsUsed: [
+        { icon: denoIcon, description: "Deno" },
+        { icon: jsIcon, description: "JavaScript" },
+        { icon: htmlIcon, description: "HTML5" },
+        { icon: cssIcon, description: "CSS" },
+        { icon: dockerIcon, description: "Docker" },
+      ],
       description:
         "I made a full stack project that implements an quiz web app as part of course Web Software Development. I used deno as run time environment and Postgres as our database and containarized the application with Docker.",
       icon: quizzerIcon,
@@ -57,7 +69,12 @@ export const Projects = () => {
     },
     {
       project: "Tree Hugger",
-      skillsUsed: [reactIcon, nodeIcon, jsIcon, figmaIcon],
+      skillsUsed: [
+        { icon: reactIcon, description: "React" },
+        { icon: nodeIcon, description: "Node.js" },
+        { icon: jsIcon, description: "JavaScript" },
+        { icon: figmaIcon, description: "Figma" },
+      ],
       description:
         "I created an application for logging planted trees as part of the course User Interface Construction. I utilized Figma to produce the prototypes (wireframe and later more mature prototype) and implemented the prototype on Node.js and React.",
       icon: treehuggerIcon,
@@ -66,7 +83,9 @@ export const Projects = () => {
     },
     {
       project: "Tower Defense",
-      skillsUsed: [cppIcon],
+      skillsUsed: [
+        { icon: cppIcon, description: "C++ (programming language)" },
+      ],
       description:
         "We implemented a tower defense game in a team of 4 utilizing SFML library as part of the course Object Oriented Programming with C++. Our development approach was bolstered by the incorporation of agile practices, ensuring a dynamic and iterative process throughout the creation of the game.",
       icon: towerdefenseIcon,
@@ -75,7 +94,7 @@ export const Projects = () => {
     },
     {
       project: "Platformer",
-      skillsUsed: [pythonIcon],
+      skillsUsed: [{ icon: pythonIcon, description: "Python" }],
       description:
         "A platformer game I created as part of Y2 Basics of Programming course. This was the first bigger project I programmed.",
       icon: platformerIcon,
@@ -117,7 +136,16 @@ export const Projects = () => {
                 <div className="project-info">
                   <div className="project-skill-container">
                     {project.skillsUsed.map((skill, index) => (
-                      <img key={index} src={skill} alt="skill icon" />
+                      <Tooltip
+                        title={skill.description}
+                        placement="bottom"
+                        arrow
+                        TransitionComponent={Zoom}
+                        enterTouchDelay={0}
+                        key={index}
+                      >
+                        <img key={index} src={skill.icon} alt="skill icon" />
+                      </Tooltip>
                     ))}
                   </div>
                   <div className="project-description">

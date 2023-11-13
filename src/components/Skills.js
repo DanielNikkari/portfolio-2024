@@ -30,7 +30,6 @@ export const Skills = () => {
   const tableRef = useRef()
   const titleRef = useRef()
   const isVisible = useIsVisible(nodeRef)
-  let triggered = false
 
   const skills = [
     {
