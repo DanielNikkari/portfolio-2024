@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio-2024/static/css/main.4857c8cf.css",
-    "main.js": "/portfolio-2024/static/js/main.544eacd8.js",
+    "main.css": "/portfolio-2024/static/css/main.2bfca2d4.css",
+    "main.js": "/portfolio-2024/static/js/main.69c81d31.js",
     "static/js/787.4db47ab6.chunk.js": "/portfolio-2024/static/js/787.4db47ab6.chunk.js",
     "static/media/tower-defense-icon.png": "/portfolio-2024/static/media/tower-defense-icon.44957ae03eda9383e897.png",
     "static/media/MobilePay-Replica.png": "/portfolio-2024/static/media/MobilePay-Replica.05e1502628d71e3c3f4d.png",
@@ -11,6 +11,7 @@
     "static/media/quizzer-icon.png": "/portfolio-2024/static/media/quizzer-icon.9bc22da7addb39dfec57.png",
     "static/media/mongo-icon.png": "/portfolio-2024/static/media/mongo-icon.b10f948533814e6ac2f1.png",
     "static/media/react-icon.png": "/portfolio-2024/static/media/react-icon.706e98a85cf892705eb6.png",
+    "static/media/Fullstack-2022-icon.png": "/portfolio-2024/static/media/Fullstack-2022-icon.12a7416a432f8e1d2fd7.png",
     "static/media/python-icon.png": "/portfolio-2024/static/media/python-icon.5a3cad6f1ef6bcff5e6c.png",
     "static/media/c-icon.png": "/portfolio-2024/static/media/c-icon.9c14f850251da573f2cd.png",
     "static/media/deno-icon.png": "/portfolio-2024/static/media/deno-icon.da8750a84d12c4c4c190.png",
@@ -23,13 +24,15 @@
     "static/media/css-icon.png": "/portfolio-2024/static/media/css-icon.70b057ce6eec16ed1735.png",
     "static/media/msuite-icon.png": "/portfolio-2024/static/media/msuite-icon.d6480f3a058d8f6b5fa1.png",
     "static/media/greetings-text.svg": "/portfolio-2024/static/media/greetings-text.d5d92984a34d3068fad536ef0e4e8a8a.svg",
+    "static/media/github.svg": "/portfolio-2024/static/media/github.6d4f8d6e9335a6ad1b70714b46fcc88d.svg",
     "index.html": "/portfolio-2024/index.html",
-    "main.4857c8cf.css.map": "/portfolio-2024/static/css/main.4857c8cf.css.map",
-    "main.544eacd8.js.map": "/portfolio-2024/static/js/main.544eacd8.js.map",
+    "static/media/linkedin.svg": "/portfolio-2024/static/media/linkedin.5e7df4f7ee0eb1ea38ea4e83a96e9a5e.svg",
+    "main.2bfca2d4.css.map": "/portfolio-2024/static/css/main.2bfca2d4.css.map",
+    "main.69c81d31.js.map": "/portfolio-2024/static/js/main.69c81d31.js.map",
     "787.4db47ab6.chunk.js.map": "/portfolio-2024/static/js/787.4db47ab6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4857c8cf.css",
-    "static/js/main.544eacd8.js"
+    "static/css/main.2bfca2d4.css",
+    "static/js/main.69c81d31.js"
   ]
 }

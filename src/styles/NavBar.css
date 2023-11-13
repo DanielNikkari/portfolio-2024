@@ -32,3 +32,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@media (max-width: 500px) {
+  #navbar-section {
+    top: 4%;
+  }
+  .navbar-item {
+    font-size: medium;
+  }
+}
