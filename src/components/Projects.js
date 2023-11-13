@@ -27,6 +27,7 @@ import pythonIcon from "../assets/icons/python-icon.png"
 export const Projects = () => {
   const nodeRef = useRef()
   const titleRef = useRef()
+  const titleContainerRef = useRef()
   const isVisible = useIsVisible(titleRef)
 
   const projects = [
@@ -116,47 +117,55 @@ export const Projects = () => {
   return (
     <section id="projects">
       <div id="projects-container" ref={nodeRef}>
-        <h2 id="project-section-title" ref={titleRef} className="section-title">
-          My Projects 📚
-        </h2>
-        {projects.map((project, index) => {
-          return (
-            <div className="project-card" key={index}>
-              <h3 className="project-title" key={index}>
-                {project.project}
-              </h3>
-              <div className="project-info-container">
-                <a href={project.link} key={index}>
-                  <img
-                    className="project-icon"
-                    src={project.icon}
-                    alt="project icon"
-                  />
-                </a>
-                <div className="project-info">
-                  <div className="project-skill-container">
-                    {project.skillsUsed.map((skill, index) => (
-                      <Tooltip
-                        title={skill.description}
-                        placement="bottom"
-                        arrow
-                        TransitionComponent={Zoom}
-                        enterTouchDelay={0}
-                        key={index}
-                      >
-                        <img key={index} src={skill.icon} alt="skill icon" />
-                      </Tooltip>
-                    ))}
+        <div ref={titleContainerRef} className="project-title-container">
+          <h2
+            ref={titleRef}
+            id="project-section-title"
+            className="section-title"
+          >
+            My Projects 📚
+          </h2>
+        </div>
+        <div id="projects-list">
+          {projects.map((project, index) => {
+            return (
+              <div className="project-card" key={index}>
+                <h3 className="project-title" key={index}>
+                  {project.project}
+                </h3>
+                <div className="project-info-container">
+                  <a href={project.link} key={index}>
+                    <img
+                      className="project-icon"
+                      src={project.icon}
+                      alt="project icon"
+                    />
+                  </a>
+                  <div className="project-info">
+                    <div className="project-skill-container">
+                      {project.skillsUsed.map((skill, index) => (
+                        <Tooltip
+                          title={skill.description}
+                          placement="bottom"
+                          arrow
+                          TransitionComponent={Zoom}
+                          enterTouchDelay={0}
+                          key={index}
+                        >
+                          <img key={index} src={skill.icon} alt="skill icon" />
+                        </Tooltip>
+                      ))}
+                    </div>
+                    <div className="project-description">
+                      {project.description}
+                    </div>
+                    <div className="project-year">{project.year}</div>
                   </div>
-                  <div className="project-description">
-                    {project.description}
-                  </div>
-                  <div className="project-year">{project.year}</div>
                 </div>
               </div>
-            </div>
-          )
-        })}
+            )
+          })}
+        </div>
       </div>
     </section>
   )

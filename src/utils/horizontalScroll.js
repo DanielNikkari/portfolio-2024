@@ -1,7 +1,5 @@
 import { useRef, useEffect } from "react"
 
-let scrollAmount = 0
-
 export const useHorizontalScroll = () => {
   const elRef = useRef()
   useEffect(() => {
@@ -11,9 +9,8 @@ export const useHorizontalScroll = () => {
         e.preventDefault()
         if (e.deltaY > -6 && e.deltaY < 6) return
         el.scrollTo({
-          left: el.scrollLeft + e.deltaY / 3,
+          left: el.scrollLeft + e.deltaY,
         })
-        scrollAmount = +el.scrollLeft + e.deltaY / 3
       }
       el.addEventListener("wheel", onWheel)
       return () => el.removeEventListener("wheel", onWheel)
@@ -23,5 +20,15 @@ export const useHorizontalScroll = () => {
 }
 
 export const scrolledX = () => {
-  return scrollAmount
+  const scrolled = document.getElementById("horizontal-scroll-container")
+
+  if (scrolled) {
+    return scrolled.scrollLeft
+  }
+  return 0
+}
+
+export const getScrollAreaWidth = () => {
+  const scrolled = document.getElementById("horizontal-scroll-container")
+  return [scrolled.scrollWidth, scrolled.clientWidth]
 }

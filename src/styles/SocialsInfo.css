@@ -1,6 +1,6 @@
 #socialsinfo-section {
   position: relative;
-  width: 50vw;
+  width: 80vw;
   display: flex;
   justify-content: end;
   overflow: hidden;
@@ -30,7 +30,7 @@
 
 .display-socials {
   position: absolute;
-  right: 20%;
+  right: 55%;
   top: 47%;
   transition: 1s;
 }
@@ -38,7 +38,7 @@
 /* Optimization for a phone screen */
 @media (max-width: 500px) {
   #socialsinfo-section {
-    width: 85vw;
+    width: 100vw;
   }
   .hide-socials {
     right: -60%;

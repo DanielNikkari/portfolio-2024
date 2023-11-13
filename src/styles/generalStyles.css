@@ -12,3 +12,9 @@
 .hide {
   display: none;
 }
+
+@media (max-width: 500px) {
+  .section-title {
+    font-size: 3em;
+  }
+}

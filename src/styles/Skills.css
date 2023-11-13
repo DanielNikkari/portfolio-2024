@@ -1,5 +1,6 @@
 #skills-container {
-  width: 130vw;
+  width: 120vw;
+  scroll-snap-align: start;
 }
 
 #skills {
