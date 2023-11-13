@@ -47,7 +47,7 @@ export const Projects = () => {
         { icon: jsIcon, description: "JavaScript" },
       ],
       description:
-        "I took the course Fullstack Open 2022 as part of my Computer Science studies.",
+        "I took the course Fullstack Open as part of my Computer Science studies.",
       icon: fullstackIcon,
       year: 2023,
       link: "https://github.com/DanielNikkari/fullstack-2022",

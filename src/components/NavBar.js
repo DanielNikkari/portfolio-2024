@@ -30,7 +30,7 @@ export const NavBar = () => {
         onClick={(event) => scrollToSection(introSection, event)}
         className="navbar-item activeNav"
       >
-        Home
+        Home 🏰
       </button>
       <button
         id="skills-nav"
@@ -51,7 +51,7 @@ export const NavBar = () => {
         onClick={(event) => scrollToSection(socialsSection, event)}
         className="navbar-item"
       >
-        Socials 📱
+        Socials 💈
       </button>
     </section>
   )
