@@ -4,6 +4,7 @@ import { Introduction } from "./components/Introduction"
 import { Skills } from "./components/Skills"
 import { NavBar } from "./components/NavBar"
 import { Projects } from "./components/Projects"
+import { SocialsInfo } from "./components/SocialsInfo"
 
 import { useHorizontalScroll } from "./utils/horizontalScroll"
 
@@ -21,6 +22,7 @@ const Portfolio = () => {
         <Introduction />
         <Skills />
         <Projects />
+        <SocialsInfo />
       </div>
     </div>
   )

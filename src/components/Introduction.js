@@ -2,7 +2,6 @@ import "../styles/Introduction.css"
 import { ReactComponent as GreetingsText } from "../assets/greetings-text.svg"
 import { useEffect, useRef, useState } from "react"
 import { useIsVisible } from "react-is-visible"
-import { scrolledX } from "../utils/horizontalScroll"
 
 import scrollIcon from "../assets/icons/scroll-icon.png"
 import swipeIcon from "../assets/icons/swipe-icon.png"
@@ -37,7 +36,9 @@ export const Introduction = () => {
   isVisible &&
     (() => {
       let currentNav = document.querySelector(".activeNav")
-      currentNav.classList.remove("activeNav")
+      if (currentNav && currentNav.classList) {
+        currentNav.classList.remove("activeNav")
+      }
       let skillsSectionNav = document.getElementById("intro-nav")
       skillsSectionNav.classList.add("activeNav")
     })()

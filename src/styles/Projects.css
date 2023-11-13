@@ -1,9 +1,4 @@
-#projects {
-  /* width: 2000px; */
-}
-
 #projects-container {
-  /* width: 1800px; */
   height: 100vh;
   margin: 0 auto;
   display: flex;

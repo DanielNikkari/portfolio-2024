@@ -166,7 +166,9 @@ export const Skills = () => {
   isVisible &&
     (() => {
       let currentNav = document.querySelector(".activeNav")
-      currentNav.classList.remove("activeNav")
+      if (currentNav && currentNav.classList) {
+        currentNav.classList.remove("activeNav")
+      }
       let skillsSectionNav = document.getElementById("skills-nav")
       skillsSectionNav.classList.add("activeNav")
     })()

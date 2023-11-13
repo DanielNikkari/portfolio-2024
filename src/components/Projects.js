@@ -43,7 +43,7 @@ export const Projects = () => {
       description:
         "I took the course Fullstack Open 2022 as part of my Computer Science studies.",
       icon: fullstackIcon,
-      year: 2022,
+      year: 2023,
       link: "https://github.com/DanielNikkari/fullstack-2022",
     },
     {
@@ -87,7 +87,9 @@ export const Projects = () => {
   isVisible &&
     (() => {
       let currentNav = document.querySelector(".activeNav")
-      currentNav.classList.remove("activeNav")
+      if (currentNav && currentNav.classList) {
+        currentNav.classList.remove("activeNav")
+      }
       let skillsSectionNav = document.getElementById("projects-nav")
       skillsSectionNav.classList.add("activeNav")
     })()

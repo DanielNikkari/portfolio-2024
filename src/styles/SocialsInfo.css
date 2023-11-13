@@ -1,0 +1,49 @@
+#socialsinfo-section {
+  position: relative;
+  width: 50vw;
+  display: flex;
+  justify-content: end;
+  overflow: hidden;
+}
+
+#socials-trigger {
+  width: 5vw;
+  height: 100vh;
+}
+
+.hide-socials {
+  position: absolute;
+  right: -15%;
+  top: 47%;
+  transition: 1s;
+}
+
+.socials-icon {
+  margin: 0 0 0 2em;
+  width: 6em;
+  transition: 0.3s;
+}
+
+.socials-icon:hover {
+  scale: 1.05;
+}
+
+.display-socials {
+  position: absolute;
+  right: 20%;
+  top: 47%;
+  transition: 1s;
+}
+
+/* Optimization for a phone screen */
+@media (max-width: 500px) {
+  #socialsinfo-section {
+    width: 85vw;
+  }
+  .hide-socials {
+    right: -60%;
+  }
+  .display-socials {
+    right: 28%;
+  }
+}
