@@ -1,17 +1,22 @@
 import "../styles/NavBar.css"
 import React from "react"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 
 export const NavBar = () => {
   let introSection
   let skillsSection
   let projectsSection
   let socialsSection
+  const navbarRef = useRef()
+
   useEffect(() => {
     introSection = document.getElementById("introduction")
     skillsSection = document.getElementById("skills-container")
     projectsSection = document.getElementById("projects-container")
     socialsSection = document.getElementById("socials-trigger")
+    setTimeout(() => {
+      navbarRef.current.classList.remove("navbar-hidden")
+    }, 700)
   }, [])
 
   const scrollToSection = (section, e) => {
@@ -24,7 +29,7 @@ export const NavBar = () => {
   }
 
   return (
-    <section id="navbar-section">
+    <section ref={navbarRef} className="navbar-section navbar-hidden">
       <button
         id="intro-nav"
         onClick={(event) => scrollToSection(introSection, event)}
