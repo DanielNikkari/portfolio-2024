@@ -5,6 +5,7 @@ import { Skills } from "./components/Skills"
 import { NavBar } from "./components/NavBar"
 import { Projects } from "./components/Projects"
 import { SocialsInfo } from "./components/SocialsInfo"
+import { Work } from "./components/Work"
 
 import { useHorizontalScroll } from "./utils/horizontalScroll"
 import { userNavStyle } from "./utils/navBarUtil"
@@ -24,6 +25,7 @@ const Portfolio = () => {
         <Introduction navBarActiveStyle={navBarActiveStyle} />
         <Skills navBarActiveStyle={navBarActiveStyle} />
         <Projects navBarActiveStyle={navBarActiveStyle} />
+        <Work navBarActiveStyle={navBarActiveStyle} />
         <SocialsInfo navBarActiveStyle={navBarActiveStyle} />
       </div>
     </div>

@@ -6,6 +6,7 @@ export const NavBar = ({ navBarActiveStyle }) => {
   let introSection
   let skillsSection
   let projectsSection
+  let workSection
   let socialsSection
   const navbarRef = useRef()
 
@@ -13,6 +14,7 @@ export const NavBar = ({ navBarActiveStyle }) => {
     introSection = document.getElementById("introduction")
     skillsSection = document.getElementById("skills-container")
     projectsSection = document.getElementById("projects-container")
+    workSection = document.getElementById("work-section")
     socialsSection = document.getElementById("socials-trigger")
     setTimeout(() => {
       navbarRef.current.classList.remove("navbar-hidden")
@@ -50,6 +52,13 @@ export const NavBar = ({ navBarActiveStyle }) => {
         className="navbar-item"
       >
         Projects 📚
+      </button>
+      <button
+        id="work-nav"
+        onClick={(event) => scrollToSection(workSection, event)}
+        className="navbar-item"
+      >
+        Work 💻
       </button>
       <button
         id="socials-nav"

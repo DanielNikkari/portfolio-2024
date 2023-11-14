@@ -23,7 +23,7 @@ export const SocialsInfo = ({ navBarActiveStyle }) => {
     setLinkClicked(true)
     setTimeout(() => {
       window.location.href = link
-    }, 500)
+    }, 700)
     if (e.target.classList.toString().includes("reveal-social")) {
       e.target.classList.remove("reveal-social")
     }
