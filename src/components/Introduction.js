@@ -2,11 +2,12 @@ import "../styles/Introduction.css"
 import { ReactComponent as GreetingsText } from "../assets/greetings-text.svg"
 import { useEffect, useRef, useState } from "react"
 import { useIsVisible } from "react-is-visible"
+import { userNavStyle } from "../utils/navBarUtil"
 
 import scrollIcon from "../assets/icons/scroll-icon.png"
 import swipeIcon from "../assets/icons/swipe-icon.png"
 
-export const Introduction = () => {
+export const Introduction = ({ navBarActiveStyle }) => {
   const nodeRef = useRef()
   const isVisible = useIsVisible(nodeRef)
   const [showHelper, setShowHelper] = useState(false)
@@ -35,12 +36,12 @@ export const Introduction = () => {
 
   isVisible &&
     (() => {
-      let currentNav = document.querySelector(".activeNav")
+      let currentNav = document.querySelector("." + navBarActiveStyle)
       if (currentNav && currentNav.classList) {
-        currentNav.classList.remove("activeNav")
+        currentNav.classList.remove(navBarActiveStyle)
       }
       let skillsSectionNav = document.getElementById("intro-nav")
-      skillsSectionNav.classList.add("activeNav")
+      skillsSectionNav.classList.add(navBarActiveStyle)
     })()
 
   let scrollEl

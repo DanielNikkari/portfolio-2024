@@ -4,7 +4,7 @@ import githubIcon from "../assets/font-awesome/github.svg"
 import { useIsVisible } from "react-is-visible"
 import { useRef, useEffect } from "react"
 
-export const SocialsInfo = () => {
+export const SocialsInfo = ({ navBarActiveStyle }) => {
   const triggerRef = useRef()
   const isVisible = useIsVisible(triggerRef)
 
@@ -19,12 +19,12 @@ export const SocialsInfo = () => {
 
   isVisible &&
     (() => {
-      let currentNav = document.querySelector(".activeNav")
+      let currentNav = document.querySelector("." + navBarActiveStyle)
       if (currentNav && currentNav.classList) {
-        currentNav.classList.remove("activeNav")
+        currentNav.classList.remove(navBarActiveStyle)
       }
       let socialsSectionNav = document.getElementById("socials-nav")
-      socialsSectionNav.classList.add("activeNav")
+      socialsSectionNav.classList.add(navBarActiveStyle)
     })()
 
   return (

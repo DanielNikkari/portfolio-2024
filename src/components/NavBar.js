@@ -1,8 +1,9 @@
 import "../styles/NavBar.css"
 import React from "react"
 import { useEffect, useRef } from "react"
+import { userNavStyle } from "../utils/navBarUtil"
 
-export const NavBar = () => {
+export const NavBar = ({ navBarActiveStyle }) => {
   let introSection
   let skillsSection
   let projectsSection
@@ -20,11 +21,11 @@ export const NavBar = () => {
   }, [])
 
   const scrollToSection = (section, e) => {
-    let currentNavItem = document.querySelector(".activeNav")
+    let currentNavItem = document.querySelector("." + navBarActiveStyle)
     if (currentNavItem && currentNavItem.classList) {
-      currentNavItem.classList.remove("activeNav")
+      currentNavItem.classList.remove(navBarActiveStyle)
     }
-    e.target.classList.add("activeNav")
+    e.target.classList.add(navBarActiveStyle)
     section.scrollIntoView({ behavior: "smooth", block: "center" })
   }
 

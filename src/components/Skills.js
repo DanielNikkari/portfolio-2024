@@ -3,6 +3,7 @@ import { useIsVisible } from "react-is-visible"
 import { useRef } from "react"
 import Tooltip from "@mui/material/Tooltip"
 import Zoom from "@mui/material/Zoom"
+import { userNavStyle } from "../utils/navBarUtil"
 
 // Icon imports
 import jsIcon from "../assets/icons/js-icon.png"
@@ -25,7 +26,7 @@ import pandasIcon from "../assets/icons/pandas-icon.png"
 import cIcon from "../assets/icons/c-icon.png"
 import denoicon from "../assets/icons/deno-icon.png"
 
-export const Skills = () => {
+export const Skills = ({ navBarActiveStyle }) => {
   const nodeRef = useRef()
   const tableRef = useRef()
   const titleRef = useRef()
@@ -164,12 +165,12 @@ export const Skills = () => {
 
   isVisible &&
     (() => {
-      let currentNav = document.querySelector(".activeNav")
+      let currentNav = document.querySelector("." + navBarActiveStyle)
       if (currentNav && currentNav.classList) {
-        currentNav.classList.remove("activeNav")
+        currentNav.classList.remove(navBarActiveStyle)
       }
       let skillsSectionNav = document.getElementById("skills-nav")
-      skillsSectionNav.classList.add("activeNav")
+      skillsSectionNav.classList.add(navBarActiveStyle)
     })()
 
   return (

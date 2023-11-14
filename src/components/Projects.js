@@ -3,6 +3,7 @@ import { useIsVisible } from "react-is-visible"
 import { useRef } from "react"
 import Tooltip from "@mui/material/Tooltip"
 import Zoom from "@mui/material/Zoom"
+import { userNavStyle } from "../utils/navBarUtil"
 
 // Project icons
 import mobilepayIcon from "../assets/projects/MobilePay-Replica.png"
@@ -24,7 +25,7 @@ import reactIcon from "../assets/icons/react-icon.png"
 import nodeIcon from "../assets/icons/node-icon.png"
 import pythonIcon from "../assets/icons/python-icon.png"
 
-export const Projects = () => {
+export const Projects = ({ navBarActiveStyle }) => {
   const nodeRef = useRef()
   const titleRef = useRef()
   const titleContainerRef = useRef()
@@ -106,12 +107,12 @@ export const Projects = () => {
 
   isVisible &&
     (() => {
-      let currentNav = document.querySelector(".activeNav")
+      let currentNav = document.querySelector("." + navBarActiveStyle)
       if (currentNav && currentNav.classList) {
-        currentNav.classList.remove("activeNav")
+        currentNav.classList.remove(navBarActiveStyle)
       }
       let skillsSectionNav = document.getElementById("projects-nav")
-      skillsSectionNav.classList.add("activeNav")
+      skillsSectionNav.classList.add(navBarActiveStyle)
     })()
 
   return (
