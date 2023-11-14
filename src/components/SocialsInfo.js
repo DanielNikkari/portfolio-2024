@@ -31,7 +31,7 @@ export const SocialsInfo = ({ navBarActiveStyle }) => {
     setTimeout(() => {
       e.target.classList.remove("animate-social")
       e.target.classList.add("reveal-social")
-    }, 1500)
+    }, 2000)
   }
 
   isVisible &&
