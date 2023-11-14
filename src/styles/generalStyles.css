@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .section-title {
   animation: display 1.5s ease-in-out forwards;
   font-size: 4em;
@@ -27,4 +31,9 @@
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+#running-robot {
+  height: 50px;
+  position: relative;
 }
