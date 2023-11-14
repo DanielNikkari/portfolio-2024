@@ -3,7 +3,6 @@ import { useIsVisible } from "react-is-visible"
 import { useRef } from "react"
 import Tooltip from "@mui/material/Tooltip"
 import Zoom from "@mui/material/Zoom"
-import { userNavStyle } from "../utils/navBarUtil"
 
 // Icon imports
 import jsIcon from "../assets/icons/js-icon.png"

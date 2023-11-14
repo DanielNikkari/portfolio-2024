@@ -1,7 +1,6 @@
 import "../styles/NavBar.css"
 import React from "react"
 import { useEffect, useRef } from "react"
-import { userNavStyle } from "../utils/navBarUtil"
 
 export const NavBar = ({ navBarActiveStyle }) => {
   let introSection

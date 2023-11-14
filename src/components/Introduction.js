@@ -2,7 +2,6 @@ import "../styles/Introduction.css"
 import { ReactComponent as GreetingsText } from "../assets/greetings-text.svg"
 import { useEffect, useRef, useState } from "react"
 import { useIsVisible } from "react-is-visible"
-import { userNavStyle } from "../utils/navBarUtil"
 
 import scrollIcon from "../assets/icons/scroll-icon.png"
 import swipeIcon from "../assets/icons/swipe-icon.png"

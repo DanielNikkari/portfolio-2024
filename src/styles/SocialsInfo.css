@@ -22,6 +22,7 @@
   margin: 0 0 0 2em;
   width: 6em;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .socials-icon:hover {
@@ -45,5 +46,39 @@
   }
   .display-socials {
     right: 23%;
+  }
+}
+
+.animate-social {
+  animation: openSocial 0.7s ease-in-out forwards;
+}
+
+.reveal-social {
+  animation: showSocial 0.7s ease-in-out forwards;
+}
+
+@keyframes openSocial {
+  0%  {
+    transform: scaleX(1.3);
+  } 20% {
+    transform: scaleX(1.3);
+    transform: translateY(-40%);
+  } 30% {
+    transform: scaleX(1.3);
+    transform: translateY(-40%);
+  } 90% {
+    transform: scaleX(1);
+    transform: translateY(500%);
+  } 100% {
+    transform: scaleX(1);
+    transform: translateY(500%);
+  }
+}
+
+@keyframes showSocial {
+  0%  {
+    transform: translateY(500%);
+  } 100% {
+    transform: translateY(0%);
   }
 }
