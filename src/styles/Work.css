@@ -77,6 +77,9 @@ hr {
 }
 
 @media (max-width: 500px) {
+  .work-title-container {
+  margin: -3em 5em 5em 10em;
+  }
   #work-section {
     width: 400vw;
   }

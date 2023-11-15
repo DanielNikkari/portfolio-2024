@@ -7,12 +7,18 @@ import sadBubble from "../assets/sprties/speech-bubbles/sad-bubble.png"
 import questionBubble from "../assets/sprties/speech-bubbles/question-bubble.png"
 import waitBubble from "../assets/sprties/speech-bubbles/wait-bubble.png"
 import endBubble from "../assets/sprties/speech-bubbles/end-bubble.png"
+import skillsBubble from "../assets/sprties/speech-bubbles/skills-bubble.png"
 
 export const runningRobot = async () => {
   const canvas = await waitForElm("#running-robot")
   const scrolledWindow = await waitForElm("#horizontal-scroll-container")
+  const skillsSection = await waitForElm("#skills")
+  const socialsSection = await waitForElm("#socials-trigger")
+  const skillsSectionPosLeft = skillsSection.getBoundingClientRect().left
+  const skillsSectionPosRight = skillsSection.getBoundingClientRect().right
+  const socialsSectionPos = socialsSection.getBoundingClientRect().left
   // canvas.width = scrolledWindow.scrollWidth
-  const fps = 20
+  const fps = 30
 
   const c = canvas.getContext("2d")
 
@@ -22,7 +28,7 @@ export const runningRobot = async () => {
 
   class Robot {
     constructor() {
-      this.velocity = 10
+      this.velocity = 13
       this.position = {
         x: 100,
         y: 95,
@@ -77,7 +83,7 @@ export const runningRobot = async () => {
   class Speechbubble {
     constructor(image) {
       this.position = {
-        x: -10,
+        x: 0,
         y: 0,
       }
       this.width = 200
@@ -116,10 +122,10 @@ export const runningRobot = async () => {
       case 1:
         bubbleToShow = sadBubbleObj
         break
-      case 2:
+      case 3:
         bubbleToShow = questionBubbleObj
         break
-      case 4:
+      case 6:
         bubbleToShow = waitBubbleObj
     }
     speechStage++
@@ -129,19 +135,32 @@ export const runningRobot = async () => {
   const speechTriggers = (bubble) => {
     let bubbleToShow
     switch (speechTriggerStage) {
+      case 1:
+        bubbleToShow = skillsBubbleObj
+        break
       case 4:
         bubbleToShow = endBubbleObj
         break
     }
-    speechTriggerStage++
     return bubbleToShow
   }
 
   const checkTriggers = () => {
     if (
-      scrolledWindow.width ===
-      scrolledWindow.scrollLeft + scrolledWindow.clientWidth
+      scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 >
+        skillsSectionPosLeft &&
+      scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 <
+        skillsSectionPosRight
     ) {
+      speechTriggerStage = 1
+    } else if (
+      socialsSectionPos <=
+      scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2
+    ) {
+      speechTriggerStage = 4
+    } else {
+      speechTriggerStage = 0
+      stageBubbleToShow = null
     }
   }
 
@@ -151,23 +170,27 @@ export const runningRobot = async () => {
   const questionBubbleObj = new Speechbubble(questionBubble)
   const waitBubbleObj = new Speechbubble(waitBubble)
   const endBubbleObj = new Speechbubble(endBubble)
+  const skillsBubbleObj = new Speechbubble(skillsBubble)
 
   let prevCanvasPos
   let bubbleToShow = null
+  let stageBubbleToShow = null
   const animate = () => {
     prevCanvasPos = canvas.style.left.replace("px", "")
     c.clearRect(0, 0, canvas.width, canvas.height)
     robot.update()
 
-    console.log(scrolledWindow.width)
+    checkTriggers()
 
-    if (bubbleToShow) {
+    if (stageBubbleToShow) {
+      stageBubbleToShow.update()
+    } else if (bubbleToShow) {
       bubbleToShow.update()
     }
 
     if (
       canvas.style.left.replace("px", "") <
-      scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 - 10
+      scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 - 70
     ) {
       canvas.style.left = Number(prevCanvasPos) + robot.velocity + "px"
       robot.currentSprite = robot.sprites.run.right
@@ -175,7 +198,7 @@ export const runningRobot = async () => {
       bubbleToShow = null
     } else if (
       canvas.style.left.replace("px", "") >
-      scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 + 10
+      scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 + 20
     ) {
       canvas.style.left = Number(prevCanvasPos) - robot.velocity + "px"
       robot.currentSprite = robot.sprites.run.left
@@ -185,6 +208,7 @@ export const runningRobot = async () => {
       robot.currentSprite = robot.sprites.stand.straight
       if (!caseToggle) {
         bubbleToShow = speechBubbles()
+        stageBubbleToShow = speechTriggers()
         caseToggle = true
       }
     }

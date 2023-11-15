@@ -5,7 +5,8 @@ body {
 .section-title {
   animation: display 1.5s ease-in-out forwards;
   font-size: 4em;
-  margin: 1em auto;
+  /* margin: 1em auto; */
+  margin: 1em auto 0.6em;
   font-weight: 700;
   background: -webkit-linear-gradient(#d499f8, #902CCD);
   -webkit-background-clip: text;
@@ -36,4 +37,13 @@ body {
 #running-robot {
   height: 50px;
   position: relative;
+}
+
+@media (max-width: 500px) {
+  .section-title {
+    margin: 0em auto 0.6em;
+  }
+  #running-robot {
+    top: -133px !important;
+  }
 }

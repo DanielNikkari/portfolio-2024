@@ -68,7 +68,7 @@
   width: 4em;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 5em;
+  bottom: 10em;
   opacity: 0.4;
   animation: swipe-helper-animation 3s ease-in-out infinite;
 }
