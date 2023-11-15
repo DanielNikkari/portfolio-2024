@@ -1,4 +1,3 @@
-import knightSprite from "../assets/sprties/knight-running.png"
 import botSpriteRight from "../assets/sprties/bot-sprite-walk-right.png"
 import botSpriteLeft from "../assets/sprties/bot-sprite-walk-left.png"
 import botSpriteStanding from "../assets/sprties/bot-sprite-standing.png"
