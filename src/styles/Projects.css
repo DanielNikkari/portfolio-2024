@@ -99,6 +99,9 @@
 }
 
 @media (max-width: 750px) {
+  #projects-container {
+    margin: 0 auto 2em;
+  }
   .project-title-container {
     margin: -2em 5em 2em 5em;
   }
