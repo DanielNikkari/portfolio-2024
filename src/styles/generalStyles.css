@@ -37,6 +37,7 @@ body {
 #running-robot {
   height: 70px;
   position: relative;
+  top: -20px;
 }
 
 @media (max-width: 500px) {

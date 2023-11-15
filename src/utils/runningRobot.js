@@ -221,9 +221,6 @@ export const runningRobot = async () => {
 
   const robot = new Robot()
   const helloBubbleObj = new Speechbubble(helloBubble, 0, 0, 200, 90)
-  const sadBubbleObj = new Speechbubble(sadBubble)
-  const questionBubbleObj = new Speechbubble(questionBubble)
-  const waitBubbleObj = new Speechbubble(waitBubble)
   const endBubbleObj = new Speechbubble(endBubble, 0, -5, 200, 100)
   const skillsBubbleObj = new Speechbubble(skillsBubble, 0, -5, 300, 100)
   const porjectsBubbleObj = new Speechbubble(porjectsBubble, 0, -5, 300, 100)
@@ -233,7 +230,11 @@ export const runningRobot = async () => {
   let bubbleToShow = null
   let stageBubbleToShow = null
   let timout
-  let interval
+
+  setInterval(() => {
+    robot.currentSprite = robot.sprites.idle.bored
+  }, 6000)
+
   const animate = () => {
     prevCanvasPos = canvas.style.left.replace("px", "")
     c.clearRect(0, 0, canvas.width, canvas.height)
@@ -270,17 +271,11 @@ export const runningRobot = async () => {
         robot.currentSprite = robot.sprites.stand.right
         timout = setTimeout(() => {
           robot.currentSprite = robot.sprites.stand.straight
-          interval = setInterval(() => {
-            robot.currentSprite = robot.sprites.idle.bored
-          }, 6000)
         }, 1500)
       } else if (robot.currentSprite === robot.sprites.run.left) {
         robot.currentSprite = robot.sprites.stand.left
         timout = setTimeout(() => {
           robot.currentSprite = robot.sprites.stand.straight
-          interval = setInterval(() => {
-            robot.currentSprite = robot.sprites.idle.bored
-          }, 8000)
         }, 1500)
       }
       if (!caseToggle) {
