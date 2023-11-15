@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio-2024/static/css/main.eda71b56.css",
-    "main.js": "/portfolio-2024/static/js/main.268f51d8.js",
+    "main.js": "/portfolio-2024/static/js/main.c224d30d.js",
     "static/js/787.4db47ab6.chunk.js": "/portfolio-2024/static/js/787.4db47ab6.chunk.js",
     "static/media/tower-defense-icon.png": "/portfolio-2024/static/media/tower-defense-icon.44957ae03eda9383e897.png",
     "static/media/MobilePay-Replica.png": "/portfolio-2024/static/media/MobilePay-Replica.05e1502628d71e3c3f4d.png",
@@ -23,7 +23,6 @@
     "static/media/node-icon.png": "/portfolio-2024/static/media/node-icon.b8326a3722bab2b41eda.png",
     "static/media/gsuite-icon.png": "/portfolio-2024/static/media/gsuite-icon.c5938c906d2319641dea.png",
     "static/media/html-icon.png": "/portfolio-2024/static/media/html-icon.c7f367fb8acf7c4280b9.png",
-    "static/media/knight-running.png": "/portfolio-2024/static/media/knight-running.9226ca007036b3f7a3ee.png",
     "static/media/css-icon.png": "/portfolio-2024/static/media/css-icon.70b057ce6eec16ed1735.png",
     "static/media/msuite-icon.png": "/portfolio-2024/static/media/msuite-icon.d6480f3a058d8f6b5fa1.png",
     "static/media/greetings-text.svg": "/portfolio-2024/static/media/greetings-text.d5d92984a34d3068fad536ef0e4e8a8a.svg",
@@ -31,11 +30,11 @@
     "index.html": "/portfolio-2024/index.html",
     "static/media/linkedin.svg": "/portfolio-2024/static/media/linkedin.5e7df4f7ee0eb1ea38ea4e83a96e9a5e.svg",
     "main.eda71b56.css.map": "/portfolio-2024/static/css/main.eda71b56.css.map",
-    "main.268f51d8.js.map": "/portfolio-2024/static/js/main.268f51d8.js.map",
+    "main.c224d30d.js.map": "/portfolio-2024/static/js/main.c224d30d.js.map",
     "787.4db47ab6.chunk.js.map": "/portfolio-2024/static/js/787.4db47ab6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eda71b56.css",
-    "static/js/main.268f51d8.js"
+    "static/js/main.c224d30d.js"
   ]
 }
