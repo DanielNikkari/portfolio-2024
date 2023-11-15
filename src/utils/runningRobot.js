@@ -42,10 +42,10 @@ export const runningRobot = async () => {
       this.velocity = 25
       this.position = {
         x: 100,
-        y: 95,
+        y: 70,
       }
       this.width = 150
-      this.height = 60
+      this.height = 80
 
       this.img = createImage(botSpriteStanding)
       this.frames = 0
