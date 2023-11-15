@@ -29,7 +29,7 @@ export const runningRobot = async () => {
   const workSectionRight = workSection.getBoundingClientRect().right
   const socialsSectionPos = socialsSection.getBoundingClientRect().left
   // canvas.width = scrolledWindow.scrollWidth
-  const fps = 20
+  const fps = 25
 
   const c = canvas.getContext("2d")
 
@@ -39,13 +39,13 @@ export const runningRobot = async () => {
 
   class Robot {
     constructor() {
-      this.velocity = 25
+      this.velocity = 20
       this.position = {
         x: 100,
-        y: 70,
+        y: 60,
       }
-      this.width = 150
-      this.height = 80
+      this.width = 140
+      this.height = 90
 
       this.img = createImage(botSpriteStanding)
       this.frames = 0
