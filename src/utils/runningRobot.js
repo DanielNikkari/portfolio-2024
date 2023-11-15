@@ -145,15 +145,6 @@ export const runningRobot = async () => {
       case 0:
         bubbleToShow = helloBubbleObj
         break
-      // case 1:
-      //   bubbleToShow = sadBubbleObj
-      //   break
-      // case 3:
-      //   bubbleToShow = questionBubbleObj
-      //   break
-      // case 6:
-      //   bubbleToShow = waitBubbleObj
-      //   break
     }
     speechStage++
     return bubbleToShow
@@ -219,6 +210,7 @@ export const runningRobot = async () => {
     }
   }
 
+  // Initiate objects
   const robot = new Robot()
   const helloBubbleObj = new Speechbubble(helloBubble, 0, 0, 200, 90)
   const endBubbleObj = new Speechbubble(endBubble, 0, -5, 200, 100)
