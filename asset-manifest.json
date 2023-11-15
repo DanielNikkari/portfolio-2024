@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio-2024/static/css/main.c7d21faf.css",
-    "main.js": "/portfolio-2024/static/js/main.23b726d8.js",
+    "main.css": "/portfolio-2024/static/css/main.3e85bb7a.css",
+    "main.js": "/portfolio-2024/static/js/main.d47d937b.js",
     "static/js/787.4db47ab6.chunk.js": "/portfolio-2024/static/js/787.4db47ab6.chunk.js",
     "static/media/tower-defense-icon.png": "/portfolio-2024/static/media/tower-defense-icon.44957ae03eda9383e897.png",
     "static/media/MobilePay-Replica.png": "/portfolio-2024/static/media/MobilePay-Replica.05e1502628d71e3c3f4d.png",
@@ -30,12 +30,12 @@
     "static/media/github.svg": "/portfolio-2024/static/media/github.6d4f8d6e9335a6ad1b70714b46fcc88d.svg",
     "index.html": "/portfolio-2024/index.html",
     "static/media/linkedin.svg": "/portfolio-2024/static/media/linkedin.5e7df4f7ee0eb1ea38ea4e83a96e9a5e.svg",
-    "main.c7d21faf.css.map": "/portfolio-2024/static/css/main.c7d21faf.css.map",
-    "main.23b726d8.js.map": "/portfolio-2024/static/js/main.23b726d8.js.map",
+    "main.3e85bb7a.css.map": "/portfolio-2024/static/css/main.3e85bb7a.css.map",
+    "main.d47d937b.js.map": "/portfolio-2024/static/js/main.d47d937b.js.map",
     "787.4db47ab6.chunk.js.map": "/portfolio-2024/static/js/787.4db47ab6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c7d21faf.css",
-    "static/js/main.23b726d8.js"
+    "static/css/main.3e85bb7a.css",
+    "static/js/main.d47d937b.js"
   ]
 }
