@@ -2,23 +2,35 @@ import knightSprite from "../assets/sprties/knight-running.png"
 import botSpriteRight from "../assets/sprties/bot-sprite-walk-right.png"
 import botSpriteLeft from "../assets/sprties/bot-sprite-walk-left.png"
 import botSpriteStanding from "../assets/sprties/bot-sprite-standing.png"
+import botSpriteStandRight from "../assets/sprties/bot-sprite-stand-right.png"
+import botSpriteStandLeft from "../assets/sprties/bot-sprite-stand-left.png"
+import botSpriteBored from "../assets/sprties/bot-bored.png"
 import helloBubble from "../assets/sprties/speech-bubbles/greetings-bubble.png"
 import sadBubble from "../assets/sprties/speech-bubbles/sad-bubble.png"
 import questionBubble from "../assets/sprties/speech-bubbles/question-bubble.png"
 import waitBubble from "../assets/sprties/speech-bubbles/wait-bubble.png"
+import workBubble from "../assets/sprties/speech-bubbles/work-bubble.png"
 import endBubble from "../assets/sprties/speech-bubbles/end-bubble.png"
 import skillsBubble from "../assets/sprties/speech-bubbles/skills-bubble.png"
+import porjectsBubble from "../assets/sprties/speech-bubbles/projects-bubble.png"
 
 export const runningRobot = async () => {
   const canvas = await waitForElm("#running-robot")
   const scrolledWindow = await waitForElm("#horizontal-scroll-container")
+
   const skillsSection = await waitForElm("#skills")
+  const projectsSection = await waitForElm("#projects-container")
+  const workSection = await waitForElm(".work-title-container")
   const socialsSection = await waitForElm("#socials-trigger")
   const skillsSectionPosLeft = skillsSection.getBoundingClientRect().left
   const skillsSectionPosRight = skillsSection.getBoundingClientRect().right
+  const projectsSectionLeft = projectsSection.getBoundingClientRect().left
+  const projectsSectionRight = projectsSection.getBoundingClientRect().right
+  const workSectionLeft = workSection.getBoundingClientRect().left
+  const workSectionRight = workSection.getBoundingClientRect().right
   const socialsSectionPos = socialsSection.getBoundingClientRect().left
   // canvas.width = scrolledWindow.scrollWidth
-  const fps = 30
+  const fps = 20
 
   const c = canvas.getContext("2d")
 
@@ -28,7 +40,7 @@ export const runningRobot = async () => {
 
   class Robot {
     constructor() {
-      this.velocity = 13
+      this.velocity = 25
       this.position = {
         x: 100,
         y: 95,
@@ -41,10 +53,15 @@ export const runningRobot = async () => {
       this.sprites = {
         stand: {
           straight: createImage(botSpriteStanding),
+          right: createImage(botSpriteStandRight),
+          left: createImage(botSpriteStandLeft),
         },
         run: {
           right: createImage(botSpriteRight),
           left: createImage(botSpriteLeft),
+        },
+        idle: {
+          bored: createImage(botSpriteBored),
         },
       }
 
@@ -73,7 +90,17 @@ export const runningRobot = async () => {
         this.frames > 5
       ) {
         this.frames = 0
-      } else if (this.currentSprite === this.sprites.stand.straight) {
+      } else if (
+        this.currentSprite === this.sprites.stand.straight ||
+        this.currentSprite === this.sprites.stand.right ||
+        this.currentSprite === this.sprites.stand.left
+      ) {
+        this.frames = 0
+      } else if (
+        this.currentSprite === this.sprites.idle.bored &&
+        this.frames > 9
+      ) {
+        robot.currentSprite = robot.sprites.stand.straight
         this.frames = 0
       }
       this.draw()
@@ -81,13 +108,13 @@ export const runningRobot = async () => {
   }
 
   class Speechbubble {
-    constructor(image) {
+    constructor(image, x = 0, y = 0, width, height) {
       this.position = {
-        x: 0,
-        y: 0,
+        x: x,
+        y: y,
       }
-      this.width = 200
-      this.height = 100
+      this.width = width
+      this.height = height
       this.active = false
       this.img = createImage(image)
     }
@@ -119,14 +146,15 @@ export const runningRobot = async () => {
       case 0:
         bubbleToShow = helloBubbleObj
         break
-      case 1:
-        bubbleToShow = sadBubbleObj
-        break
-      case 3:
-        bubbleToShow = questionBubbleObj
-        break
-      case 6:
-        bubbleToShow = waitBubbleObj
+      // case 1:
+      //   bubbleToShow = sadBubbleObj
+      //   break
+      // case 3:
+      //   bubbleToShow = questionBubbleObj
+      //   break
+      // case 6:
+      //   bubbleToShow = waitBubbleObj
+      //   break
     }
     speechStage++
     return bubbleToShow
@@ -138,13 +166,21 @@ export const runningRobot = async () => {
       case 1:
         bubbleToShow = skillsBubbleObj
         break
+      case 2:
+        bubbleToShow = porjectsBubbleObj
+        break
+      case 3:
+        bubbleToShow = workBubbleObj
+        break
       case 4:
         bubbleToShow = endBubbleObj
         break
     }
+    console.log(speechTriggerStage)
     return bubbleToShow
   }
 
+  // Check which section the user has scrolled to
   const checkTriggers = () => {
     if (
       scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 >
@@ -152,29 +188,53 @@ export const runningRobot = async () => {
       scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 <
         skillsSectionPosRight
     ) {
+      // Trigger for Skills section
       speechTriggerStage = 1
+    } else if (
+      scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 >
+        projectsSectionLeft &&
+      scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 <
+        projectsSectionRight
+    ) {
+      // Trigger for Projects section
+      speechTriggerStage = 2
+    } else if (
+      scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 >
+        workSectionLeft &&
+      scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 <
+        workSectionRight
+    ) {
+      // Trigger for Work experience section
+      speechTriggerStage = 3
     } else if (
       socialsSectionPos <=
       scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2
     ) {
+      // Trigger for Socials section
+      console.log("Socials")
       speechTriggerStage = 4
     } else {
+      // Reset values
       speechTriggerStage = 0
       stageBubbleToShow = null
     }
   }
 
   const robot = new Robot()
-  const helloBubbleObj = new Speechbubble(helloBubble)
+  const helloBubbleObj = new Speechbubble(helloBubble, 0, 0, 200, 90)
   const sadBubbleObj = new Speechbubble(sadBubble)
   const questionBubbleObj = new Speechbubble(questionBubble)
   const waitBubbleObj = new Speechbubble(waitBubble)
-  const endBubbleObj = new Speechbubble(endBubble)
-  const skillsBubbleObj = new Speechbubble(skillsBubble)
+  const endBubbleObj = new Speechbubble(endBubble, 0, -5, 200, 100)
+  const skillsBubbleObj = new Speechbubble(skillsBubble, 0, -5, 300, 100)
+  const porjectsBubbleObj = new Speechbubble(porjectsBubble, 0, -5, 300, 100)
+  const workBubbleObj = new Speechbubble(workBubble, 0, -5, 300, 100)
 
   let prevCanvasPos
   let bubbleToShow = null
   let stageBubbleToShow = null
+  let timout
+  let interval
   const animate = () => {
     prevCanvasPos = canvas.style.left.replace("px", "")
     c.clearRect(0, 0, canvas.width, canvas.height)
@@ -196,6 +256,7 @@ export const runningRobot = async () => {
       robot.currentSprite = robot.sprites.run.right
       caseToggle = false
       bubbleToShow = null
+      clearTimeout(timout)
     } else if (
       canvas.style.left.replace("px", "") >
       scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2 + 20
@@ -204,8 +265,25 @@ export const runningRobot = async () => {
       robot.currentSprite = robot.sprites.run.left
       caseToggle = false
       bubbleToShow = null
+      clearTimeout(timout)
     } else {
-      robot.currentSprite = robot.sprites.stand.straight
+      if (robot.currentSprite === robot.sprites.run.right) {
+        robot.currentSprite = robot.sprites.stand.right
+        timout = setTimeout(() => {
+          robot.currentSprite = robot.sprites.stand.straight
+          interval = setInterval(() => {
+            robot.currentSprite = robot.sprites.idle.bored
+          }, 6000)
+        }, 1500)
+      } else if (robot.currentSprite === robot.sprites.run.left) {
+        robot.currentSprite = robot.sprites.stand.left
+        timout = setTimeout(() => {
+          robot.currentSprite = robot.sprites.stand.straight
+          interval = setInterval(() => {
+            robot.currentSprite = robot.sprites.idle.bored
+          }, 8000)
+        }, 1500)
+      }
       if (!caseToggle) {
         bubbleToShow = speechBubbles()
         stageBubbleToShow = speechTriggers()

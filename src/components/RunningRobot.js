@@ -6,7 +6,7 @@ export const RunningRobot = ({ navBarActiveStyle }) => {
   // Check if user is using Safari and add custom styling
   useEffect(() => {
     navBarActiveStyle.toLowerCase().includes("safari") &&
-      (canvasRef.current.style.top = "-50px")
+      (canvasRef.current.style.top = "-70px")
   }, [])
 
   return <canvas ref={canvasRef} id="running-robot" />

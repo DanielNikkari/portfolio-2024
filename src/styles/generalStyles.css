@@ -35,7 +35,7 @@ body {
 }
 
 #running-robot {
-  height: 50px;
+  height: 70px;
   position: relative;
 }
 
@@ -44,6 +44,6 @@ body {
     margin: 0em auto 0.6em;
   }
   #running-robot {
-    top: -133px !important;
+    top: -153px !important;
   }
 }
