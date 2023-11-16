@@ -216,7 +216,7 @@ export const runningRobot = async () => {
   const endBubbleObj = new Speechbubble(endBubble, 0, -5, 200, 100)
   const skillsBubbleObj = new Speechbubble(skillsBubble, 0, -5, 300, 100)
   const porjectsBubbleObj = new Speechbubble(porjectsBubble, 0, -5, 300, 100)
-  const workBubbleObj = new Speechbubble(workBubble, 0, -5, 300, 100)
+  const workBubbleObj = new Speechbubble(workBubble, 0, -5, 300, 80)
 
   let prevCanvasPos
   let bubbleToShow = null
