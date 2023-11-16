@@ -2,7 +2,6 @@ import "../styles/Work.css"
 import { useRef } from "react"
 import { useIsVisible } from "react-is-visible"
 import schneiderIcon from "../assets/work/schneiderIcon.png"
-import slushIcon from "../assets/work/slushIcon.png"
 import nesteIcon from "../assets/work/nesteIcon.png"
 import nokiaIcon from "../assets/work/nokiaIcon.png"
 import aaltoIcon from "../assets/work/aaltoIcon.png"
@@ -18,7 +17,7 @@ export const Work = ({ navBarActiveStyle }) => {
     },
     {
       logo: aaltoIcon,
-      year: 2021,
+      year: 2022,
     },
     {
       logo: nesteIcon,
