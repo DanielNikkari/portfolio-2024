@@ -23,6 +23,8 @@ import cppIcon from "../assets/icons/cpp-icon.png"
 import reactIcon from "../assets/icons/react-icon.png"
 import nodeIcon from "../assets/icons/node-icon.png"
 import pythonIcon from "../assets/icons/python-icon.png"
+import sqlIcon from "../assets/icons/sql-icon.png"
+import monogoIcon from "../assets/icons/mongo-icon.png"
 
 export const Projects = ({ navBarActiveStyle }) => {
   const nodeRef = useRef()
@@ -46,6 +48,7 @@ export const Projects = ({ navBarActiveStyle }) => {
         { icon: reactIcon, description: "React" },
         { icon: nodeIcon, description: "Node.js" },
         { icon: jsIcon, description: "JavaScript" },
+        { icon: monogoIcon, description: "MongoDB" },
       ],
       description:
         "I took the course Fullstack Open as part of my Computer Science studies.",
@@ -61,6 +64,7 @@ export const Projects = ({ navBarActiveStyle }) => {
         { icon: htmlIcon, description: "HTML5" },
         { icon: cssIcon, description: "CSS" },
         { icon: dockerIcon, description: "Docker" },
+        { icon: sqlIcon, description: "PostgreSQL" },
       ],
       description:
         "I made a full stack project that implements an quiz web app as part of course Web Software Development. I used deno as run time environment and Postgres as our database and containarized the application with Docker.",
@@ -75,6 +79,7 @@ export const Projects = ({ navBarActiveStyle }) => {
         { icon: nodeIcon, description: "Node.js" },
         { icon: jsIcon, description: "JavaScript" },
         { icon: figmaIcon, description: "Figma" },
+        { icon: monogoIcon, description: "MongoDB" },
       ],
       description:
         "I created an application for logging planted trees as part of the course User Interface Construction. I utilized Figma to produce the prototypes (wireframe and later more mature prototype) and implemented the prototype on Node.js and React.",

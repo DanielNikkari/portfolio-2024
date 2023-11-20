@@ -14,8 +14,9 @@
 
 .display-table {
   animation: display 1.5s ease-in-out forwards;
-  width: 100%;
+  width: 85%;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .skill-table-item {
@@ -40,6 +41,9 @@
     width: 200vw;
     display: flex;
     margin: 0 0 -2em 0;
+  }
+  .display-table {
+    width: 100%;
   }
 }
 
