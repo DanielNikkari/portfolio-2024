@@ -24,6 +24,7 @@ import sqlIcon from "../assets/icons/sql-icon.png"
 import pandasIcon from "../assets/icons/pandas-icon.png"
 import cIcon from "../assets/icons/c-icon.png"
 import denoicon from "../assets/icons/deno-icon.png"
+import javaIcon from "../assets/icons/java-icon.png"
 
 export const Skills = ({ navBarActiveStyle }) => {
   const nodeRef = useRef()
@@ -51,6 +52,10 @@ export const Skills = ({ navBarActiveStyle }) => {
     {
       skill: "React",
       icon: reactIcon,
+    },
+    {
+      skill: "Java",
+      icon: javaIcon,
     },
     {
       skill: "Deno",
