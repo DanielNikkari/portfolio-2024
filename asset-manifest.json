@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio-2024/static/css/main.7de757c1.css",
-    "main.js": "/portfolio-2024/static/js/main.6273137e.js",
+    "main.js": "/portfolio-2024/static/js/main.d311009d.js",
     "static/js/787.4db47ab6.chunk.js": "/portfolio-2024/static/js/787.4db47ab6.chunk.js",
     "static/media/tower-defense-icon.png": "/portfolio-2024/static/media/tower-defense-icon.44957ae03eda9383e897.png",
     "static/media/MobilePay-Replica.png": "/portfolio-2024/static/media/MobilePay-Replica.05e1502628d71e3c3f4d.png",
@@ -16,6 +16,7 @@
     "static/media/c-icon.png": "/portfolio-2024/static/media/c-icon.9c14f850251da573f2cd.png",
     "static/media/deno-icon.png": "/portfolio-2024/static/media/deno-icon.da8750a84d12c4c4c190.png",
     "static/media/nokiaIcon.png": "/portfolio-2024/static/media/nokiaIcon.d12c3a8183d6e05298cb.png",
+    "static/media/java-icon.png": "/portfolio-2024/static/media/java-icon.ff1f46677fdeef79a60c.png",
     "static/media/treehugger.png": "/portfolio-2024/static/media/treehugger.9ab1a99b6bb6fabf9768.png",
     "static/media/schneiderIcon.png": "/portfolio-2024/static/media/schneiderIcon.996bbaa5ff719c1f0c71.png",
     "static/media/cpp-icon.png": "/portfolio-2024/static/media/cpp-icon.1e24f440afbd22213237.png",
@@ -31,11 +32,11 @@
     "index.html": "/portfolio-2024/index.html",
     "static/media/linkedin.svg": "/portfolio-2024/static/media/linkedin.5e7df4f7ee0eb1ea38ea4e83a96e9a5e.svg",
     "main.7de757c1.css.map": "/portfolio-2024/static/css/main.7de757c1.css.map",
-    "main.6273137e.js.map": "/portfolio-2024/static/js/main.6273137e.js.map",
+    "main.d311009d.js.map": "/portfolio-2024/static/js/main.d311009d.js.map",
     "787.4db47ab6.chunk.js.map": "/portfolio-2024/static/js/787.4db47ab6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7de757c1.css",
-    "static/js/main.6273137e.js"
+    "static/js/main.d311009d.js"
   ]
 }
