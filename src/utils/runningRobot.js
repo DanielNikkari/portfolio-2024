@@ -163,7 +163,7 @@ export const runningRobot = async () => {
         bubbleToShow = endBubbleObj
         break
     }
-    console.log(speechTriggerStage)
+
     return bubbleToShow
   }
 
@@ -198,7 +198,6 @@ export const runningRobot = async () => {
       scrolledWindow.scrollLeft + scrolledWindow.clientWidth / 2
     ) {
       // Trigger for Socials section
-      console.log("Socials")
       speechTriggerStage = 4
     } else {
       // Reset values
